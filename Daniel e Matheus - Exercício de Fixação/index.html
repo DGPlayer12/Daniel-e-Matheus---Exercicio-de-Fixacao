@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel e Matheus - Exercício de Fixação</title>
+</head>
+<body>
+    <script>
+    function nsom(){
+    var n=[]
+    var nom=[]
+    var mat=3
+
+    for (var i = 0; i < 5; i++) {
+        var noms=prompt("Insira o nome dos alunos")
+        nom.push(noms)
+        let na=[]
+     for (var j = 0; j < mat; j++){
+        var nota = parseFloat(prompt("Digite a nota da disciplina"))
+        na.push(nota)
+}
+    n.push(na)
+}
+    return { n, nom }}
+        function med(n, dis){
+        var som = 0
+        var quant=n.length
+    for (var i = 0; i < quant; i++){
+        som += n[i][dis]
+}
+        var med=som/quant
+        var res="Os 5 alunos tiveram é média de "+med+"na disciplina selecionada"+"<br>"
+if (med >= 6){
+        res += "Aí sim hein, foram aprovados, quem é bom é bom, parabéns pra eles"
+}else if (med >= 4 && med < 6){
+        res += "Não teve jeito, vai ter que fazer recuperação, sinto muito"
+}else{
+        res += "ihh dá 0 pra eles, po galera, aí não né, reprovaram direto"
+}
+    document.write(res + "<br>")}
+function m(){
+    let cont = true
+    let {n,nom } = nsom()
+            while (cont){
+            var mat=parseInt(prompt("Escolha uma disciplina -> 1- Geografia, 2 - Lógica de Programação , 3 - Matemática,")) - 1
+            med(n, mat)
+            cont = prompt("Quer calcular as médias de outras disciplas? -> 'sim' ou 'não' ").toLowerCase() === "sim"}
+}m()
+    </script>
+</body>
+</html>
